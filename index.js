@@ -3,8 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./Db/db.js";
 import express from "express";
 import userRouter from "./routes/user.routes.js"
-
-
+import cors from "cors"
 
 //produts routes-->
 import productRouter from "./routes/product.routes.js";
@@ -20,6 +19,7 @@ dotenv.config();
 
 
 const app = express();
+app.use((cors))
 app.use(express.json());
 //kaha pe listen karna hai
 const PORT = process.env.PORT || 3000;
